@@ -1,0 +1,359 @@
+:root {
+    /* Colors */
+    --purple: hsl(257, 40%, 49%);
+    --pink: hsl(300, 69%, 71%);
+    --white: hsl(0, 0%, 100%);
+    --box-shadow: hsla(0, 0%, 0%, 0.3);
+
+    /* Fonts */
+    --ff-heading: "Poppins", sans-serif;
+    --ff-body: "Open Sans", sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 600;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+.container {
+    background-image: url(images/bg-desktop.svg);
+    background-color: var(--purple);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3.5rem 5rem;
+    color: var(--white);
+    margin: 0 auto;
+}
+
+/* Header */
+.logo-header img{
+    height: 3.3rem;
+}
+
+/* Main */
+main {
+    margin-top: 5rem;
+}
+
+.flexbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.3rem;
+}
+
+.flexbox__call-to-action {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
+    margin-top: 2.8rem;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.text h1 {
+    font-family: var(--ff-heading);
+    font-size: 2.5rem;
+    font-weight: var(--fw-bold);
+    line-height: 3.7rem;
+}
+
+.text p {
+    font-family: var(--ff-body);
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+}
+
+.btn-standard {
+    display: inline-block;
+    font-family: var(--ff-heading);
+    font-size: 1.1rem;
+    text-decoration: none;
+    background-color: var(--white);
+    color: var(--purple);
+    padding: 0.9rem 4.1rem;
+    border-radius: 2rem;
+    box-shadow: 5px 5px 10px 1px var(--box-shadow);
+    transition: all 0.15s ease;
+}
+
+.btn-standard:hover {
+    background-color: var(--pink);
+    color: var(--white);
+}
+
+/*Footer*/
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.sml-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    transition: all 0.15s ease;
+}
+
+.sml-box:hover {
+    border: 1px solid var(--pink);
+}
+
+.sml-box:hover i {
+    color: var(--pink);
+}
+
+.icon-facebook,
+.icon-twitter,
+.icon-instagram {
+    font-size: 1.2rem;  
+    color: var(--white);
+}
+
+@media (max-width: 375px) {
+    .container {
+        background-image: url(images/bg-mobile.svg);
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4.3rem;
+        max-width: 375px;
+    }
+
+    .logo-header img{
+        height: 2rem;
+    }
+
+    main {
+        margin-top: 0;
+    }
+    
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .text {
+        gap: 0.9rem;
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+    }
+
+    .text p {
+        font-size: 1.1rem;
+    }
+
+    .btn-standard {
+        font-size: 0.9rem;
+        padding: 0.8rem 5rem;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-media-links {
+        gap: 1rem;
+    }
+
+    .sml-box {
+        height: 38px;
+        width: 38px;
+    }
+
+    .icon-facebook,
+    .icon-twitter,
+    .icon-instagram {
+        font-size: 1.3rem;
+    }
+
+    .attribution {
+        display: none;
+    }
+
+}
+
+@media (min-width: 375px) and (max-width: 1440px) {
+    .container {
+        background-image: url(images/bg-mobile.svg);
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4.3rem;
+        max-width: 375px;
+        margin: 0 auto;
+    }
+
+    .logo-header img{
+        height: 2rem;
+    }
+
+    main {
+        margin-top: 0;
+    }
+    
+    .flexbox {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .text {
+        gap: 0.9rem;
+    }
+
+    .text h1 {
+        font-size: 1.5rem;
+        line-height: 2.3rem;
+    }
+
+    .text p {
+        font-size: 1.1rem;
+    }
+
+    .btn-standard {
+        font-size: 0.9rem;
+        padding: 0.8rem 5rem;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-media-links {
+        gap: 1rem;
+    }
+
+    .sml-box {
+        height: 38px;
+        width: 38px;
+    }
+
+    .icon-facebook,
+    .icon-twitter,
+    .icon-instagram {
+        font-size: 1.3rem;
+    }
+    
+    .attribution {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+.attribution { font-size: 11px; text-align: center; font-family: var(--ff-body); }
+.attribution a { color: hsl(228, 45%, 44%); }
