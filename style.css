@@ -278,7 +278,7 @@ footer {
 
 }
 
-@media (min-width: 375px) and (max-width: 1440px) {
+@media (min-width: 375px) and (max-width: 1439px) {
     .container {
         background-image: url(images/bg-mobile.svg);
         padding: 2rem 2.5rem;
