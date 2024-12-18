@@ -44,7 +44,7 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
-    background-color: rgb(30,30,30);
+    background-color: rgb(30, 30, 30);
   min-height: 100vh;
   line-height: 1.5;
   display: flex;
